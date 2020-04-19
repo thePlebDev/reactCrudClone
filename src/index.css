@@ -1,0 +1,20 @@
+button,
+.button {
+	margin-bottom: 0 !important;
+	margin-right: .5rem;
+}
+
+.flex-row{
+  display: flex;
+}
+
+.container{
+  margin: 0 auto;
+  width: 60%;
+
+}
+
+.flex-large{
+
+  width: 60%;
+}

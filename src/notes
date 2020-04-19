@@ -1,0 +1,72 @@
+HOOKS
+-they let us use state and other React features without writing a class.
+useState is a Hook.you call it inside a function component to add some local state to it. React will preserve this state between
+re-renders
+- the only argument to useState is the initial state. The state doesnt have to be an object, it can be anything
+
+WHAT IS A HOOK
+- Hooks are functions that let you hook into REacte state and lifecycle features from function components. Hooks don't work inside of
+classes. they let you use REact without classes
+- when we declare const [age,setAge] =useState(42) this lets us give different names to the state varibles we declared by calling
+useState
+- you can only call Hooks at the top level. Do not call Hooks inside loops, conditions or nested functions.
+- you can onlt call Hooks from React function components. Do not call Hooks from regular Javascript functions.
+
+- you can use a hook when you write a function component and you realize that you need to add some state to it.
+- previously you had to convert it to a class. Now you can use a Hook inside the existing function component.
+
+- so the use state is us literally declaring a state varible
+
+WHAT DOES USESTATE RETURN
+- it returns a pair of values: the current state and a function that updates it. This is why we write const [count,setCount] = useState()
+- if you want to update the current count, you call setCount
+
+
+SUBMITTING THE FORM BACK TO THE APP COMPONENT
+-we pass the function down with props, we then access the fucntion with props. we then write a new function that will prevent
+the default form from submitting.
+
+- so I need to understand wtf is going on with the code inside the form. It looks simple I just need to understand what is going on
+with it.
+- first we create the initial state and we create the useState hook. the first value being the actual value and the second value
+being the function on how we can change the state.
+- now the handle input function is how we are going to handle the state change. we need it to get the event. we will use object
+destrucuring allow us to easily get the name and value from the form. we will then set the reset the state with the setUser function
+
+- then we extract the values from the state object, and reference our function in the onChange event.
+- the onChange detects if the value of the input has changed and then in our case, it will fire off a function.
+- so this means that all this function will be doing is changing the state and we still need a function to add the state to the
+table.
+
+- so onSubmit our form will prevent the default action from occurring. if there is nothing in the name or user name field
+return nothing.
+- if the form is filled out. we access the addUser function through props and and call setUser with the new form state
+- so what basically is happening is that we have a state and we are updating the state with the new state that we get from the
+user form.
+
+
+DELETING A USER
+-we created a deleteUser function that will take the ID of the user and filter them out of the user array.
+- the filter function created a new array will all the elements that pass the test implemented.
+- we are just returning the state without the state that we deleted
+- we then pass that function through props to UserTable.
+- now we just need to make sure that the delete button call that function.
+- so we get the user Id from the fact that our delete button is still in the map function.
+- it works, very function cool.
+
+UPDATING A USER
+- this will be simular to the ability to updating adding users, except we'll have to be able to identify which user is being edited.
+- in class components we would use the componentDidUpdate lifecycle method to achieve this, but now we'll use an Effect Hook
+- the Effect Hook is like componentDidMount and ComponentDidUpdate combine.
+
+THE EFFECT HOOK.
+-so it has to be imported like useState
+- it appears to be used when we want to preform side effects after the DOM has rendered.
+- when we are using this hook we are telling React That our component needs to do somthing after render. UseEffect will run after
+every render.
+
+
+ the first thing we are going to do is make state for whether or not edit node is turned on. It will begin as false.
+
+
+ - so now that we have created hers, it is time to create mine.
